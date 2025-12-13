@@ -26,11 +26,11 @@ NR == FNR {
 {
     print
 }
-/BOOKS_HTML_START/ {
+/<!-- BOOKS_HTML_START -->/ {
     print books
     # Skip lines until we find the END marker
     while (getline > 0) {
-        if (/BOOKS_HTML_END/) {
+        if (/<!-- BOOKS_HTML_END -->/) {
             print
             break
         }
