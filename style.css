@@ -160,11 +160,11 @@ thead th {
         margin-bottom: 0.25rem;
     }
     
-    td:first-child::before {
+    table.intermediate-text-problems td:first-child::before {
         content: "Problem: ";
     }
     
-    td:last-child::before {
+    table.intermediate-text-problems td:last-child::before {
         content: "Solution: ";
     }
 }
