@@ -1,12 +1,26 @@
-/* Basic legible text and layout */
 body {
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    margin: 1rem;
-    max-width: 800px;
+    margin: 0; /* Remove the old margin */
+    padding: 0 1rem; /* Adds left and right padding on all screens */
+    max-width: 800px; /* Limits width on larger screens */
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+
+/* Extra comfort on very small phones */
+@media (max-width: 480px) {
+    body {
+        padding: 0 1.25rem; /* Slightly more breathing room */
+    }
+}
+
+/* Ensure table and other elements respect the body padding */
+table, p, h1, header {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -81,7 +95,7 @@ thead th {
     thead {
         display: none; /* Hide header row on mobile */
     }
-    
+
     tr {
         display: block;
         margin-bottom: 1.5rem;
@@ -90,13 +104,38 @@ thead th {
         overflow: hidden;
         background: #fcfcfc;
     }
-    
-    td {
+
+     /* td { */
+     /*    display: block; */
+     /*    width: 100%; */
+     /* 	padding: 0.75rem 1.5rem 0.75rem 1rem; */
+     /*    border: none; */
+     /*    border-bottom: 1px solid #eee; */
+     /*    word-wrap: break-word;        /\* Older browsers *\/ */
+     /*    overflow-wrap: break-word;     /\* Modern standard *\/ */
+     /*    hyphens: auto;                /\* Optional: adds hyphenation for even better breaking *\/ */
+     /* } */
+
+     td {
         display: block;
         width: 100%;
-        padding: 0.75rem 1rem;
+	padding: 0.75rem 1.5rem 0.75rem 1rem;
         border: none;
         border-bottom: 1px solid #eee;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        box-sizing: border-box;   /* Important: ensures padding doesn't cause overflow */
+    }
+
+    /* Ensure the label doesn't cause issues */
+    td[data-label]::before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+        display: block;
+        margin-bottom: 0.25rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     td:last-child {
