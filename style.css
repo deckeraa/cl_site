@@ -23,7 +23,7 @@ body {
 
 /* Ensure links are visible on the dark background */
 a {
-    color: #aaffaa;  /* Light green for links */
+    color: #aaffaa; /* Light green for links */
     text-decoration: underline;
 }
 
@@ -82,7 +82,6 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #0066cc;
 }
 
 nav a[aria-current="page"] {
