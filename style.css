@@ -1,5 +1,5 @@
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: "Georgia", "Times New Roman", Times, serif;
     font-size: 16px;
     line-height: 1.6;
     margin: 0; /* Remove the old margin */
@@ -8,6 +8,27 @@ body {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+
+    /* background cycle */
+    background-image: 
+        linear-gradient(#311d00de, #311d00de),  /* Dark green overlay */
+        url('Aeneas_Flight_from_Troy_by_Federico_Barocci.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  /* Keeps image fixed while scrolling */
+    background-repeat: no-repeat;
+    color: white;  /* Makes all text white */
+    min-height: 100vh;  /* Ensures body covers full viewport */
+}
+
+/* Ensure links are visible on the dark background */
+a {
+    color: #aaffaa;  /* Light green for links */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffffff;
 }
 
 /* Extra comfort on very small phones */
@@ -103,20 +124,10 @@ thead th {
         border-radius: 8px;
         overflow: hidden;
         background: #fcfcfc;
+	background-color: rgba(0, 0, 0, 0.4);  /* Slightly darker card background */
     }
 
-     /* td { */
-     /*    display: block; */
-     /*    width: 100%; */
-     /* 	padding: 0.75rem 1.5rem 0.75rem 1rem; */
-     /*    border: none; */
-     /*    border-bottom: 1px solid #eee; */
-     /*    word-wrap: break-word;        /\* Older browsers *\/ */
-     /*    overflow-wrap: break-word;     /\* Modern standard *\/ */
-     /*    hyphens: auto;                /\* Optional: adds hyphenation for even better breaking *\/ */
-     /* } */
-
-     td {
+    td {
         display: block;
         width: 100%;
 	padding: 0.75rem 1.5rem 0.75rem 1rem;
